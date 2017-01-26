@@ -85,7 +85,7 @@ def plot_errorbar(filename, headernames):
     # Two options or plotting (comment/uncomment the option you want): 
     # -) either use errorbars 
     #plt.errorbar(rc.radio, rc.velocity, yerr=rc.sigmavelocity, 
-    #         linewidth=2.5, color=colorpalette[0], label="bulge's rc")
+    #         fmt='+', color=colorpalette[0], label="bulge's rc")
     # -) or use matplotlib's fill_between() call to create error bars         
     plt.fill_between(rc.radio, rc.velocity - rc.sigmavelocity,  
                  rc.velocity + rc.sigmavelocity, color=colorpalette[0])
