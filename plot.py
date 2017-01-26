@@ -118,7 +118,7 @@ def plot_errorbar(filename, headernames):
     # Two options or plotting (comment/uncomment the option you want): 
     # -) either use errorbars 
 #    plt.errorbar(df[[2]].values, df[[0]].values, yerr=df[[1]].values, 
-#                 linewidth=2.5, color=colorpalette[0], label="error bar")
+#                 fmt='+', color=colorpalette[0], label="error bar")
     # -) or use matplotlib's fill_between() call to create error bars 
     plt.fill_between(df.x, df.y - df.sigmay,  
                  df.y + df.sigmay, color=colorpalette[0])
