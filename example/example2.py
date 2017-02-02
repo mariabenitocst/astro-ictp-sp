@@ -29,9 +29,9 @@ for i in range(len(colorpalette)):
 #-------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------
 
-#gNFW1 = DM.gNFW(R0, 0.49, Rs, 0.45)
-gNFW1 = DM.gNFW(R0, 0., 4.8, 0.36)
-gNFW2 = DM.gNFW(R0, 1.28, Rs, 0.32)
+gNFW1 = DM.gNFW(R0, 0.49, Rs, 0.45)
+#gNFW1 = DM.gNFW(R0, 0., 4.8, 0.36)
+#gNFW2 = DM.gNFW(R0, 1.28, Rs, 0.32)
 #gNFW3 = DM.gNFW(R0, 0.048, 5.15, 0.317)
 
 
@@ -81,13 +81,13 @@ else:
 
 
 v1 = gNFW1.velocity(rB)
-v2 = gNFW2.velocity(rB)
+#v2 = gNFW2.velocity(rB)
 #v3 = gNFW3.velocity(rB)
 
 for j in range(len(rB)):
     vBiX.append(np.sqrt(vB[j]**2+vI[j]**2+vX[j]**2))
     vBiX_NFW1.append(np.sqrt(vBiX[j]**2+v1[j]**2))
-    vBiX_NFW2.append(np.sqrt(vBiX[j]**2+v2[j]**2))
+#    vBiX_NFW2.append(np.sqrt(vBiX[j]**2+v2[j]**2))
     #vBiX_NFW3.append(np.sqrt(vBiX[j]**2+v3[j]**2))
 
 
@@ -121,13 +121,22 @@ plt.errorbar(df1.radio, df1.velocity, yerr=df1.deltaVelocity,
              label='Galkin + Halo Stars') 
 
 plt.plot(rB, vBiX_NFW1, 
-             linewidth=2.5, color=colorpalette[4], label='$ \gamma=0, R_s=4.8 $') 
-                
-plt.plot(rB, vBiX_NFW2, 
-             linewidth=2.5, color=colorpalette[5], label='$ \gamma=1.28, R_s=20 $')
+             linewidth=2.5, color=colorpalette[4], label='$ \gamma=0.49, R_s=0.45 $') 
+
+plt.plot(rB, vB, 
+            linewidth=2.5, color=colorpalette[6], label='bulge') 
+plt.plot(rB, vI, 
+            linewidth=2.5, color=colorpalette[7], label='disc')
+plt.plot(rB, vX, 
+            linewidth=2.5, color=colorpalette[8], label='gas')            
+
+plt.plot(rB, v1, 
+            linewidth=2.5, color=colorpalette[9], label='gNFW')                                                              
+#plt.plot(rB, vBiX_NFW2, 
+#             linewidth=2.5, color=colorpalette[5], label='$ \gamma=1.28, R_s=20 $')
                                                                                                       
 # Limit the range of the plot
-plt.ylim(50, 450)    
+plt.ylim(0, 350)    
 plt.xlim(0, 50)
 
 # Write text in the plot 
