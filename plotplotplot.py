@@ -2,6 +2,7 @@
 # Need the following Python libraries installed to run this code:
 #    -) matplotlib
 #    -) pandas
+# Maria introduce a line here
 #-------------------------------------------------------------------------------
 import matplotlib.pyplot as plt
 import pandas  as pd  # contains data structure and data analysis tools
