@@ -1,0 +1,64 @@
+
+To identify yourself
+git config −−global user.name "YOUR␣NAME"
+
+To identify your email address
+git config −−global user.email "YOUR␣EMAIL␣ADDRESS"
+
+
+Once you create a directory with the material you want to upload (“push”)
+initialize the directory from within
+
+git init
+
+
+“Add” the material
+
+git add *
+
+
+Check the status of the material (aded files should show up in a list)
+git status
+
+
+“Commit” the material (notice that “commit“ is an intermediate state, between ADD, and “push” which will send to the online repository)
+git commit -m "First galkin online trial"
+
+Check again (it should have disappeared)
+git status
+
+
+Identify the “origin” (which is really the destination)
+git remote add origin https://github.com/fabioiocco/astro-ictp-sp.git
+
+
+PUSH the stuff online
+git push -u origin master
+
+
+UNTIL NOW, all this to PUSH stuff from my laptop to online.
+——————————————————————
+
+NOW, I want to learn how to PULL stuff from online to my own laptop
+
+I can simply 
+git clone “online.directory.git”
+
+
+NOTICE that, by “cloning” a directory from any public github account, you set that directory as if you were creating it as an ORIGIN “git remote add origin”, and if you want to push any change performed in the directory, you only have 
+
+
+
+Once I have cloned a directory on my laptop, I can modify and play with it. Good.
+The I “add” and “commit” the changes, and PUSH them on my OWN version ONLINE.
+At this point I can create a “pull request” to the owner of the original version (master) for that person to merge all changes.
+
+
+How do I, instead, update or Synchronize the possibly modified version of the owner onto my own?
+ONLINE, I can create a pull request and then swap the destination/origin folders.
+So I create a PULL request to myself, I accept it, and this will update ONLINE.
+
+At this point I can synchronize my own version on my laptop, with a simple PULL
+
+
+
